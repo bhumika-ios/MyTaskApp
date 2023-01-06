@@ -73,7 +73,8 @@ struct HomeView: View {
         }
         .padding(15)
         .background{
-            ZStack(alignment: .bottom){
+            
+            VStack(spacing: 0){
                 Color.white
                 ///- Gradient opacity background
                 /// give a nice gradient effect at its bottom.
@@ -81,6 +82,7 @@ struct HomeView: View {
                     .fill(.linearGradient(colors: [
                         .white,
                         .clear], startPoint: .top, endPoint: .bottom))
+                    .frame(height: 20)
             }
             .ignoresSafeArea()
         }
