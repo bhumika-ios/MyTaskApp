@@ -24,6 +24,7 @@
 		ACB6D0C92967FFE900DF677F /* Laila-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Laila-Medium.ttf"; sourceTree = "<group>"; };
 		ACB6D0CA2967FFE900DF677F /* Laila-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Laila-SemiBold.ttf"; sourceTree = "<group>"; };
 		ACB6D0CB2967FFE900DF677F /* Laila-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Laila-Regular.ttf"; sourceTree = "<group>"; };
+		ACB6D0CC2968008000DF677F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		ACB6D0B42967FB9B00DF677F /* MyHabitApp */ = {
 			isa = PBXGroup;
 			children = (
+				ACB6D0CC2968008000DF677F /* Info.plist */,
 				ACB6D0C62967FEEC00DF677F /* Fonts */,
 				ACB6D0C52967FEE300DF677F /* Model */,
 				ACB6D0C42967FEDC00DF677F /* View */,
@@ -304,6 +306,7 @@
 				DEVELOPMENT_TEAM = LU893QGJWJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyHabitApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -333,6 +336,7 @@
 				DEVELOPMENT_TEAM = LU893QGJWJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyHabitApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
