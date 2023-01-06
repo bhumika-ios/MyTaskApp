@@ -47,6 +47,7 @@ struct HomeView: View {
             Rectangle()
                 .stroke(.gray.opacity(0.5), style: StrokeStyle(lineWidth: 0.5, lineCap: .butt, lineJoin: .bevel, dash: [5], dashPhase: 5))
                 .frame(height: 0.5)
+                .offset(y: 10)
         }
         .hAlign(.leading)
         .padding(.vertical,15)
