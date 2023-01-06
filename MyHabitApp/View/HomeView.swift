@@ -21,15 +21,28 @@ struct HomeView: View {
                     HeaderView()
                     
                 }
-        AddTaskView1()
+      
             }
+             AddTaskView1()
         }
         
     }
     /// -  timeline view
     @ViewBuilder
     func TimelineView()->some View{
-        
+        VStack{
+            let hours = Calendar.current.hours
+            ForEach(hours, id: \.self){hour in
+                TimelineViewRow(hour)
+            }
+        }
+    }
+    /// - timelineview row
+    @ViewBuilder
+    func TimelineViewRow(_ hour: Date)->some View{
+        HStack(alignment: .top){
+            Text(hour.toString("h a"))
+        }
     }
     
     /// - Header View
