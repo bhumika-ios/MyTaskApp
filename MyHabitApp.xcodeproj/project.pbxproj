@@ -51,6 +51,9 @@
 		ACB6D0B42967FB9B00DF677F /* MyHabitApp */ = {
 			isa = PBXGroup;
 			children = (
+				ACB6D0C62967FEEC00DF677F /* Fonts */,
+				ACB6D0C52967FEE300DF677F /* Model */,
+				ACB6D0C42967FEDC00DF677F /* View */,
 				ACB6D0B52967FB9B00DF677F /* MyHabitAppApp.swift */,
 				ACB6D0B72967FB9B00DF677F /* ContentView.swift */,
 				ACB6D0B92967FB9C00DF677F /* Assets.xcassets */,
@@ -65,6 +68,27 @@
 				ACB6D0BC2967FB9C00DF677F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ACB6D0C42967FEDC00DF677F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ACB6D0C52967FEE300DF677F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACB6D0C62967FEEC00DF677F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
