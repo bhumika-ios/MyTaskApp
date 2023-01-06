@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    /// - View Properties
+    @State private var currentDay: Date = .init()
     var body: some View {
         ZStack{
             VStack{
@@ -54,16 +56,27 @@ struct HomeView: View {
     func WeekRow()->some View{
         HStack(spacing: 0){
             ForEach(Calendar.current.currentWeek){weekDay in
+                let status = Calendar.current.isDate(weekDay.date, inSameDayAs: currentDay)
                 VStack(spacing: 6){
                    // Text(weekDay.string)
                     Text(weekDay.string.prefix(3))
                         .laila(14, .medium)
                     Text(weekDay.date.toString("dd"))
+                        .laila(16, status ? .medium : .regular)
                 }
+                ///- Highlighting the currently active day
+                .foregroundColor(status ? Color(.blue) : .gray)
                 .hAlign(.center)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    withAnimation(.easeInOut(duration: 0.3)){
+                        currentDay = weekDay.date
+                    }
+                }
                 
             }
         }
+        .padding(.vertical,10)
         .padding(.horizontal, -15)
     }
 }
