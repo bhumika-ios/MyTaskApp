@@ -55,7 +55,8 @@ struct HomeView: View {
         HStack(spacing: 0){
             ForEach(Calendar.current.currentWeek){weekDay in
                 VStack(spacing: 6){
-                    Text(weekDay.string)
+                   // Text(weekDay.string)
+                    Text(weekDay.string.prefix(3))
                 }
                 
             }
