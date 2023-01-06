@@ -14,7 +14,8 @@ struct HomeView: View {
         ZStack{
             VStack{
                 ScrollView(.vertical, showsIndicators: false) {
-                 
+                 TimelineView()
+                        .padding(15)
                 }
                 .safeAreaInset(edge: .top, spacing: 0) {
                     HeaderView()
@@ -23,6 +24,11 @@ struct HomeView: View {
         AddTaskView1()
             }
         }
+        
+    }
+    /// -  timeline view
+    @ViewBuilder
+    func TimelineView()->some View{
         
     }
     
@@ -159,6 +165,19 @@ extension Date{
 
 //MARK: Calendar extension
 extension Calendar{
+    ///- return 24 hours in a day
+    /// so when we get the start of the day, which means 0:00 with the help of this we can easily retrive the 24 - hours dates.
+    var hours: [Date]{
+        let startOfDay = self.startOfDay(for: Date())
+        var hours: [Date] = []
+        for index in 0..<24{
+            if let date = self.date(byAdding: .hour, value: index, to: startOfDay){
+                hours.append(date)
+            }
+        }
+        return hours
+    }
+    ///- Retuen current week in array format
     var currentWeek: [WeekDay]{
         guard let firstWeekDay = self.dateInterval(of: .weekOfMonth, for: Date())?.start else{ return []}
         var week: [WeekDay] = []
