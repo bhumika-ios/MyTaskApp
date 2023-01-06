@@ -42,9 +42,24 @@ struct HomeView: View {
             Text(Date().toString("MMM YYYY"))
                 .laila(16, .medium)
                 .hAlign(.leading)
-                .padding(.top, 13)
+                .padding(.top, 15)
+            
+            ///- Current week Row
+            WeekRow()
         }
         .padding(15)
+    }
+    ///- week Row
+    @ViewBuilder
+    func WeekRow()->some View{
+        HStack(spacing: 0){
+            ForEach(Calendar.current.currentWeek){weekDay in
+                VStack(spacing: 6){
+                    Text(weekDay.string)
+                }
+                
+            }
+        }
     }
 }
 
