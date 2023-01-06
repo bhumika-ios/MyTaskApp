@@ -72,6 +72,18 @@ struct HomeView: View {
             WeekRow()
         }
         .padding(15)
+        .background{
+            ZStack(alignment: .bottom){
+                Color.white
+                ///- Gradient opacity background
+                /// give a nice gradient effect at its bottom.
+                Rectangle()
+                    .fill(.linearGradient(colors: [
+                        .white,
+                        .clear], startPoint: .top, endPoint: .bottom))
+            }
+            .ignoresSafeArea()
+        }
     }
     ///- week Row
     @ViewBuilder
