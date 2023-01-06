@@ -58,9 +58,11 @@ struct HomeView: View {
                    // Text(weekDay.string)
                     Text(weekDay.string.prefix(3))
                 }
+                .hAlign(.center)
                 
             }
         }
+        .padding(.horizontal, -15)
     }
 }
 
