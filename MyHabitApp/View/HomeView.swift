@@ -42,7 +42,10 @@ struct HomeView: View {
     func TimelineViewRow(_ hour: Date)->some View{
         HStack(alignment: .top){
             Text(hour.toString("h a"))
+                .laila(14, .regular)
         }
+        .hAlign(.leading)
+        .padding(.vertical,15)
     }
     
     /// - Header View
