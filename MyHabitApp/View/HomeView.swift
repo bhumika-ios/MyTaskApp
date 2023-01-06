@@ -39,3 +39,11 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
+// MARK: View Extensions
+extension View{
+    func hAlign(_ alignment: Alignment)->some View{
+        self
+            .frame(maxWidth: .infinity, alignment: alignment)
+    }
+}
