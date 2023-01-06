@@ -13,7 +13,7 @@ struct HomeView: View {
             
         }
         .safeAreaInset(edge: .top, spacing: 0) {
-            
+            HeaderView()
         }
     }
     
