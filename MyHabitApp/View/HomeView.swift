@@ -109,3 +109,14 @@ extension View{
             .frame(maxHeight: .infinity, alignment: alignment)
     }
 }
+
+// MARK: Date Extension
+extension Date{
+    func toString(_ format: String)->String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+}
+
+
