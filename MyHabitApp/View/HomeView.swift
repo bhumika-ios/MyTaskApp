@@ -24,6 +24,7 @@ struct HomeView: View {
             HStack{
                 VStack(alignment: .leading, spacing: 6){
                     Text("Today")
+                        .laila(22, .light)
                 }
             }
         }
