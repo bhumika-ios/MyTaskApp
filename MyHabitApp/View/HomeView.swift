@@ -29,6 +29,7 @@ struct HomeView: View {
                     Text("Welcome, User")
                         .laila(14, .light)
                 }
+                .hAlign(.leading)
             }
         }
     }
