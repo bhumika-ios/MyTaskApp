@@ -19,6 +19,11 @@
 		ACB6D0B72967FB9B00DF677F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACB6D0B92967FB9C00DF677F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB6D0BC2967FB9C00DF677F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACB6D0C72967FFE900DF677F /* Laila-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Laila-Bold.ttf"; sourceTree = "<group>"; };
+		ACB6D0C82967FFE900DF677F /* Laila-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Laila-Light.ttf"; sourceTree = "<group>"; };
+		ACB6D0C92967FFE900DF677F /* Laila-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Laila-Medium.ttf"; sourceTree = "<group>"; };
+		ACB6D0CA2967FFE900DF677F /* Laila-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Laila-SemiBold.ttf"; sourceTree = "<group>"; };
+		ACB6D0CB2967FFE900DF677F /* Laila-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Laila-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,11 @@
 		ACB6D0C62967FEEC00DF677F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				ACB6D0C72967FFE900DF677F /* Laila-Bold.ttf */,
+				ACB6D0C82967FFE900DF677F /* Laila-Light.ttf */,
+				ACB6D0C92967FFE900DF677F /* Laila-Medium.ttf */,
+				ACB6D0CB2967FFE900DF677F /* Laila-Regular.ttf */,
+				ACB6D0CA2967FFE900DF677F /* Laila-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
