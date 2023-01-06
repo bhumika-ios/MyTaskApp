@@ -25,6 +25,9 @@ struct HomeView: View {
                 VStack(alignment: .leading, spacing: 6){
                     Text("Today")
                         .laila(22, .light)
+                    
+                    Text("Welcome, User")
+                        .laila(14, .light)
                 }
             }
         }
