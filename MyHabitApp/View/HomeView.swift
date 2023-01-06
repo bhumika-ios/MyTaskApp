@@ -38,8 +38,11 @@ struct HomeView: View {
                 }
                 .hAlign(.leading)
             }
+            // - Today DAte in string
+            Text(Date().toString("MMM YYYY"))
+                .laila(16, .medium)
         }
-        .padding()
+        .padding(15)
     }
 }
 
