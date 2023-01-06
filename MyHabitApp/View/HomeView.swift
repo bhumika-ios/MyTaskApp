@@ -32,6 +32,7 @@ struct HomeView: View {
                 .hAlign(.leading)
             }
         }
+        .padding()
     }
 }
 
