@@ -43,6 +43,10 @@ struct HomeView: View {
         HStack(alignment: .top){
             Text(hour.toString("h a"))
                 .laila(14, .regular)
+                .frame(width: 45, alignment: .leading)
+            Rectangle()
+                .stroke(.gray.opacity(0.5), style: StrokeStyle(lineWidth: 0.5, lineCap: .butt, lineJoin: .bevel, dash: [5], dashPhase: 5))
+                .frame(height: 0.5)
         }
         .hAlign(.leading)
         .padding(.vertical,15)
