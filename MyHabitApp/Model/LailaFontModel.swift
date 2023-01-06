@@ -33,3 +33,11 @@ enum Laila{
         }
     }
 }
+
+extension View{
+    func laila(_ size: CGFloat, _ weight: Laila)->some View{
+        self
+            .font(.custom("Laila", size: size))
+            .fontWeight(weight.wight)
+    }
+}
