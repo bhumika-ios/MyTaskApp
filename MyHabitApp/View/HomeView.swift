@@ -20,7 +20,13 @@ struct HomeView: View {
     /// - Header View
     @ViewBuilder
     func HeaderView()->some View{
-        
+        VStack{
+            HStack{
+                VStack(alignment: .leading, spacing: 6){
+                    Text("Today")
+                }
+            }
+        }
     }
 }
 
