@@ -13,6 +13,7 @@
 		ACB6D0BD2967FB9C00DF677F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB6D0BC2967FB9C00DF677F /* Preview Assets.xcassets */; };
 		ACB6D0CE2968017E00DF677F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6D0CD2968017E00DF677F /* HomeView.swift */; };
 		ACB6D0D02968041600DF677F /* LailaFontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6D0CF2968041600DF677F /* LailaFontModel.swift */; };
+		ACB6D0D229683C6200DF677F /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6D0D129683C6200DF677F /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		ACB6D0CC2968008000DF677F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ACB6D0CD2968017E00DF677F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ACB6D0CF2968041600DF677F /* LailaFontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LailaFontModel.swift; sourceTree = "<group>"; };
+		ACB6D0D129683C6200DF677F /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB6D0CF2968041600DF677F /* LailaFontModel.swift */,
+				ACB6D0D129683C6200DF677F /* TaskModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				ACB6D0CE2968017E00DF677F /* HomeView.swift in Sources */,
 				ACB6D0B82967FB9B00DF677F /* ContentView.swift in Sources */,
+				ACB6D0D229683C6200DF677F /* TaskModel.swift in Sources */,
 				ACB6D0D02968041600DF677F /* LailaFontModel.swift in Sources */,
 				ACB6D0B62967FB9B00DF677F /* MyHabitAppApp.swift in Sources */,
 			);
