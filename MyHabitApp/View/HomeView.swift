@@ -57,6 +57,8 @@ struct HomeView: View {
                 VStack(spacing: 6){
                    // Text(weekDay.string)
                     Text(weekDay.string.prefix(3))
+                        .laila(14, .medium)
+                    Text(weekDay.date.toString("dd"))
                 }
                 .hAlign(.center)
                 
