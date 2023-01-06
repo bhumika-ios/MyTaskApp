@@ -46,4 +46,8 @@ extension View{
         self
             .frame(maxWidth: .infinity, alignment: alignment)
     }
+    func vAlign(_ alignment: Alignment)->some View{
+        self
+            .frame(maxHeight: .infinity, alignment: alignment)
+    }
 }
