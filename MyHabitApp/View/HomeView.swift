@@ -16,6 +16,12 @@ struct HomeView: View {
             
         }
     }
+    
+    /// - Header View
+    @ViewBuilder
+    func HeaderView()->some View{
+        
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {
