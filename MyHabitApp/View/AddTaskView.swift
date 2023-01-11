@@ -117,10 +117,32 @@ struct AddTaskView: View {
                             .padding(.vertical, 5)
                             .background{
                                 RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                    .fill(category.color.opacity(0.7))
+                                    .fill(category.color.opacity(0.25))
                             }
+                            .foregroundColor(category.color)
+                            .contentShape(Rectangle())
+//                            .onTapGesture {
+//                                <#code#>
+//                            }
                     }
                 }
+                .padding(.top,5)
+                Button{
+                    
+                }label: {
+                    Text("Create Task")
+                        .laila(16, .regular)
+                        .foregroundColor(.white)
+                        .padding(.vertical,15)
+                        .hAlign(.center)
+                        .background{
+                            Capsule()
+                                .fill(taskCategory.color.gradient)
+                        }
+                }
+                .vAlign(.bottom)
+                .disabled(taskName == "")
+                .opacity(taskName == "" ? 0.6 : 1)
             }
             .padding(15)
         }
