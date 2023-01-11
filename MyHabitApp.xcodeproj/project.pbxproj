@@ -14,6 +14,7 @@
 		ACB6D0CE2968017E00DF677F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6D0CD2968017E00DF677F /* HomeView.swift */; };
 		ACB6D0D02968041600DF677F /* LailaFontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6D0CF2968041600DF677F /* LailaFontModel.swift */; };
 		ACB6D0D229683C6200DF677F /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6D0D129683C6200DF677F /* TaskModel.swift */; };
+		ACD064B3296E92AE00D99A7B /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD064B2296E92AE00D99A7B /* AddTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		ACB6D0CD2968017E00DF677F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ACB6D0CF2968041600DF677F /* LailaFontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LailaFontModel.swift; sourceTree = "<group>"; };
 		ACB6D0D129683C6200DF677F /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		ACD064B2296E92AE00D99A7B /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB6D0CD2968017E00DF677F /* HomeView.swift */,
+				ACD064B2296E92AE00D99A7B /* AddTaskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				ACB6D0CE2968017E00DF677F /* HomeView.swift in Sources */,
 				ACB6D0B82967FB9B00DF677F /* ContentView.swift in Sources */,
 				ACB6D0D229683C6200DF677F /* TaskModel.swift in Sources */,
+				ACD064B3296E92AE00D99A7B /* AddTaskView.swift in Sources */,
 				ACB6D0D02968041600DF677F /* LailaFontModel.swift in Sources */,
 				ACB6D0B62967FB9B00DF677F /* MyHabitAppApp.swift in Sources */,
 			);

@@ -11,6 +11,7 @@ struct HomeView: View {
     /// - View Properties
     @State private var currentDay: Date = .init()
     @State private var tasks: [Task] = sampleTasks
+    
     var body: some View {
         ZStack{
             VStack{
@@ -60,7 +61,7 @@ struct HomeView: View {
                 if let hour = calendar.dateComponents([.hour], from: date).hour,
                    let taskHour = calendar.dateComponents([.hour], from: $0.dateAdded).hour,
                    /// - current day
-                   hour == taskHour && calendar.isDate($0.dateAdded, inSameDayAs: date){
+                   hour == taskHour && calendar.isDate($0.dateAdded, inSameDayAs: currentDay){
                   /// - filtering tasks based on hour and also verifying whether the date is the same as the selected week day
                     return true
                 }
@@ -102,7 +103,7 @@ struct HomeView: View {
         .padding(12)
         .background{
             ZStack(alignment: .leading){
-                // first dark color 
+                // first dark color
                 Rectangle()
                     .fill(task.taskCategory.color)
                     .frame(width: 5)
