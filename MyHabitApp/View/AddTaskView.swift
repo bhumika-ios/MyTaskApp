@@ -38,8 +38,9 @@ struct AddTaskView: View {
                     .tint(.white)
                     .padding(.top,2)
                 
-                Divider()
-                    .background(.white)
+                Rectangle()
+                    .fill(.white.opacity(0.7))
+                    .frame(height: 1)
                 TitleView("DATE")
                     .padding(.top,15)
                 HStack(alignment: .bottom, spacing: 12){
@@ -100,10 +101,10 @@ struct AddTaskView: View {
         .vAlign(.top)
     }
     @ViewBuilder
-    func TitleView(_ value: String)->some View{
+    func TitleView(_ value: String,_ color: Color = .white.opacity((0.7)) )->some View{
         Text(value)
             .laila(12, .regular)
-            .foregroundColor(.white.opacity(0.7))
+            .foregroundColor(color)
     }
 }
 
