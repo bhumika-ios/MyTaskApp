@@ -15,6 +15,7 @@ struct Task: Identifiable{
     
 }
 ///- sample of date
+/// sample task dates are set between january 4 and 5 , so while building, change it to the most recent date otherwise it wont show up on the screen
 var sampleTasks:[Task] = [
     .init(dateAdded: Date(timeIntervalSince1970: 1672829809), taskName: "hjhbjvd", taskDescription: "", taskCategory: .general),
     .init(dateAdded: Date(timeIntervalSince1970: 1672833409), taskName: "hjhbjvd", taskDescription: "", taskCategory: .bug),
@@ -23,7 +24,8 @@ var sampleTasks:[Task] = [
     .init(dateAdded: Date(timeIntervalSince1970: 1672833709), taskName: "hjhbjvd", taskDescription: "", taskCategory: .general),
 ]
 
-
+///- category Enum with color
+///add your category type here with a color
 enum Category: String, CaseIterable{
     case general = "General"
     case bug = "Bug"

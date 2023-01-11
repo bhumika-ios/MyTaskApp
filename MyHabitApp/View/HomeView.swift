@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     /// - View Properties
     @State private var currentDay: Date = .init()
+    @State private var tasks: [Task] = sampleTasks
     var body: some View {
         ZStack{
             VStack{
