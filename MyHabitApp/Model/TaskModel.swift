@@ -17,8 +17,8 @@ struct Task: Identifiable{
 ///- sample of date
 /// sample task dates are set between january 4 and 5 , so while building, change it to the most recent date otherwise it wont show up on the screen
 var sampleTasks:[Task] = [
-    .init(dateAdded: Date(timeIntervalSince1970: 1673417618), taskName: "hjhbjvd", taskDescription: "", taskCategory: .general),
-    .init(dateAdded: Date(timeIntervalSince1970: 1673417652), taskName: "hjhbjvd", taskDescription: "", taskCategory: .bug),
+    .init(dateAdded: Date(timeIntervalSince1970: 1673417618), taskName: "hjhbjvd", taskDescription: "fgbfgbfdxgbvdfbgvdcgfvdgfvdcfvdxfx", taskCategory: .general),
+    .init(dateAdded: Date(timeIntervalSince1970: 1673417652), taskName: "hjhbjvd", taskDescription: "dxfvdxfv dsfnygfd rfh drfghr hdry htyergdrgydr", taskCategory: .bug),
     .init(dateAdded: Date(timeIntervalSince1970: 1673417662), taskName: "hjhbjvd", taskDescription: "", taskCategory: .bug),
     .init(dateAdded: Date(timeIntervalSince1970: 1673417678), taskName: "hjhbjvd", taskDescription: "", taskCategory: .idea),
     .init(dateAdded: Date(timeIntervalSince1970: 1673417609), taskName: "hjhbjvd", taskDescription: "", taskCategory: .general),

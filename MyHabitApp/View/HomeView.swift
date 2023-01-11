@@ -91,6 +91,21 @@ struct HomeView: View {
             Text(task.taskName.uppercased())
                 .laila(16, .regular)
                 .foregroundColor(task.taskCategory.color)
+            
+            if task.taskDescription != ""{
+                Text(task.taskDescription)
+                    .laila(14, .light)
+                    .foregroundColor(task.taskCategory.color.opacity(0.8))
+            }
+        }
+        .hAlign(.leading)
+        .padding(12)
+        .background{
+            ZStack(alignment: .leading){
+                Rectangle()
+                    .fill(task.taskCategory.color.opacity(0.25))
+                
+            }
         }
     }
     
