@@ -26,6 +26,10 @@ struct AddTaskView: View {
                         .foregroundColor(.white)
                         .contentShape(Rectangle())
                 }
+                Text("Create New Task")
+                    .laila(28, .light)
+                    .foregroundColor(.white)
+                    .padding(.vertical, 15)
             }
             .hAlign(.leading)
             .padding(15)
@@ -35,6 +39,12 @@ struct AddTaskView: View {
             }
         }
         .vAlign(.top)
+    }
+    @ViewBuilder
+    func TitleView(_ value: String)->some View{
+        Text(value)
+            .laila(12, .regular)
+            .foregroundColor(.white.opacity(0.7))
     }
 }
 
