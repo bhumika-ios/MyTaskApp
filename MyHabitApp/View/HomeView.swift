@@ -89,6 +89,8 @@ struct HomeView: View {
     func TaskRow(_ task: Task)->some View{
         VStack(alignment: .leading, spacing: 8){
             Text(task.taskName.uppercased())
+                .laila(16, .regular)
+                .foregroundColor(task.taskCategory.color)
         }
     }
     
