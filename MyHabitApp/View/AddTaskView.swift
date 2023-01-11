@@ -97,6 +97,32 @@ struct AddTaskView: View {
                 taskCategory.color
                     .ignoresSafeArea()
             }
+            VStack(alignment: .leading, spacing: 10){
+                TitleView("DESCRIPTION", .gray)
+                
+                TextField("About your Task", text: $taskDescription)
+                    .laila(16, .regular)
+                    .padding(.top,2)
+                Rectangle()
+                    .fill(.black.opacity(0.2))
+                    .frame(height: 1)
+                
+                TitleView("CATEGORY", .gray)
+                    .padding(.top, 15)
+                LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 20), count: 3),spacing: 15){
+                    ForEach(Category.allCases, id: \.rawValue){ category in
+                        Text(category.rawValue.uppercased())
+                            .laila(12, .regular)
+                            .hAlign(.center)
+                            .padding(.vertical, 5)
+                            .background{
+                                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                    .fill(category.color.opacity(0.7))
+                            }
+                    }
+                }
+            }
+            .padding(15)
         }
         .vAlign(.top)
     }
