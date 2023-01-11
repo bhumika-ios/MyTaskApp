@@ -30,7 +30,14 @@ struct AddTaskView: View {
                     .laila(28, .light)
                     .foregroundColor(.white)
                     .padding(.vertical, 15)
+                
+                TitleView("Name")
+                
+                TextField("Make New Name", text: $taskName)
+                    .laila(16, .regular)
+                    .tint(.white)
             }
+            .environment(\.colorScheme, .dark)
             .hAlign(.leading)
             .padding(15)
             .background{
