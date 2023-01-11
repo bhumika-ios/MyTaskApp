@@ -36,6 +36,58 @@ struct AddTaskView: View {
                 TextField("Make New Name", text: $taskName)
                     .laila(16, .regular)
                     .tint(.white)
+                    .padding(.top,2)
+                
+                Divider()
+                    .background(.white)
+                TitleView("DATE")
+                    .padding(.top,15)
+                HStack(alignment: .bottom, spacing: 12){
+                    HStack(spacing: 12){
+                        Text(taskDate.toString("EEEE dd, MMMM"))
+                            .laila(16, .regular)
+                        
+                        ///- custom calender
+                        Image(systemName: "calendar")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .overlay{
+                                DatePicker("", selection: $taskDate, displayedComponents: [.date])
+                                //why not set opacity to zero? becoz when we set opacity to zero, it will hide the view and not allow us to tap on it, but blend mode doesnt hide the view
+                                    .blendMode(.destinationOver)
+                            }
+                        
+                    }
+                    .offset(y: -5)
+                    .overlay(alignment: .bottom){
+                        Rectangle()
+                            .fill(.white.opacity(0.7))
+                            .frame(height: 0.7)
+                            .offset(y: 5)
+                    }
+                    HStack(spacing: 12){
+                        Text(taskDate.toString("hh:mm a"))
+                            .laila(16, .regular)
+                        
+                        ///- custom calender
+                        Image(systemName: "clock")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .overlay{
+                                DatePicker("", selection: $taskDate, displayedComponents: [.hourAndMinute])
+                                //why not set opacity to zero? becoz when we set opacity to zero, it will hide the view and not allow us to tap on it, but blend mode doesnt hide the view
+                                    .blendMode(.destinationOver)
+                            }
+                    }
+                    .offset(y: -5)
+                    .overlay(alignment: .bottom){
+                        Rectangle()
+                            .fill(.white.opacity(0.7))
+                            .frame(height: 0.7)
+                            .offset(y: 5)
+                    }
+                }
+                .padding(.bottom,15)
             }
             .environment(\.colorScheme, .dark)
             .hAlign(.leading)
