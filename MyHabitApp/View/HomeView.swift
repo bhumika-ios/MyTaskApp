@@ -72,12 +72,24 @@ struct HomeView: View {
                     .frame(height: 0.5)
                     .offset(y: 10)
             }else{
-                
+                /// - task view
+                VStack(spacing: 10){
+                    ForEach(filteredTasks){ task in
+                        TaskRow(task)
+                    }
+                }
             }
             
         }
         .hAlign(.leading)
         .padding(.vertical,15)
+    }
+    // - TaskRow
+    @ViewBuilder
+    func TaskRow(_ task: Task)->some View{
+        VStack(alignment: .leading, spacing: 8){
+            Text(task.taskName.uppercased())
+        }
     }
     
     /// - Header View
