@@ -102,6 +102,10 @@ struct HomeView: View {
         .padding(12)
         .background{
             ZStack(alignment: .leading){
+                // first dark color 
+                Rectangle()
+                    .fill(task.taskCategory.color)
+                    .frame(width: 5)
                 Rectangle()
                     .fill(task.taskCategory.color.opacity(0.25))
                 
