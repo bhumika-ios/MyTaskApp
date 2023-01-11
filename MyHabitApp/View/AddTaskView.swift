@@ -19,7 +19,13 @@ struct AddTaskView: View {
     var body: some View {
         VStack(alignment: .leading){
             VStack(alignment: .leading, spacing: 10){
-                
+                Button{
+                    dismiss()
+                }label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.white)
+                        .contentShape(Rectangle())
+                }
             }
             .hAlign(.leading)
             .padding(15)
