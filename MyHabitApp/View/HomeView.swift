@@ -11,7 +11,9 @@ struct HomeView: View {
     /// - View Properties
     @State private var currentDay: Date = .init()
     @State private var tasks: [Task] = sampleTasks
-    
+    @State  private var showCreateTaskView: Bool = false
+      @State private var animate: Bool = false
+      private let secondaryAccentColor = Color(.blue)
     var body: some View {
         ZStack{
             VStack{
@@ -159,19 +161,41 @@ struct HomeView: View {
         HStack(spacing: 0){
             ForEach(Calendar.current.currentWeek){weekDay in
                 let status = Calendar.current.isDate(weekDay.date, inSameDayAs: currentDay)
-                VStack(spacing: 6){
+                VStack(spacing: 2){
                    // Text(weekDay.string)
                     Text(weekDay.string.prefix(3))
                         .laila(14, .medium)
                     Text(weekDay.date.toString("dd"))
                         .laila(16, status ? .medium : .regular)
+                        
+                    Rectangle()
+                        .fill(.black)
+                        .cornerRadius(20)
+                        .frame(width: 15, height: 2)
+                        .opacity(status ? 1 : 0)
+                        .offset(y:4)
                 }
                 ///- Highlighting the currently active day
-                .foregroundColor(status ? Color(.blue) : .gray)
+               .foregroundColor(status ? Color(.white) : .gray)
+                // capsule shape
+                .frame(width: 45, height: 50)
+                .background{
+                    ZStack{
+                        if status{
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(status ? Color("Pink") : Color.gray)
+                              
+                        }
+                        
+                    }
+                }
                 .hAlign(.center)
                 .contentShape(Rectangle())
                 .onTapGesture {
-                    withAnimation(.easeInOut(duration: 0.3)){
+//                    withAnimation(.easeInOut(duration: 0.3)){
+//                        currentDay = weekDay.date
+//                    }
+                    withAnimation{
                         currentDay = weekDay.date
                     }
                 }
@@ -181,6 +205,57 @@ struct HomeView: View {
         .padding(.vertical,10)
         .padding(.horizontal, -15)
     }
+    @ViewBuilder
+    func AddTaskView1()->some View{
+        VStack {
+          Spacer()
+          HStack {
+            Spacer()
+            Button(
+              action: {
+                  showCreateTaskView.toggle()
+              }, label: {
+               Image(systemName: "plus")
+                      .resizable()
+                  .multilineTextAlignment(.center)
+                  .frame(width: 20, height: 20)
+                  .fontWeight(.semibold)
+                  .foregroundColor(Color.white)
+                  .padding()
+              })
+           // .background(animate ? Color.purple : Color.blue)
+            .background(Color("Pink"))
+              .cornerRadius(20)
+              .padding()
+//              .padding(.horizontal, animate ? 30 : 30)
+//              .scaleEffect(animate ? 1.1 : 1.0)
+//              .offset(y: animate ? -1 : .zero)
+    //          .sheet(isPresented: $showCreateTaskView) {
+    //            CreateTaskView()
+    //          }
+              .fullScreenCover(isPresented: $showCreateTaskView){
+                  AddTaskView{task in
+                      //simply add task
+                      tasks.append(task)
+                  }
+              }
+          }
+          .padding(.bottom)
+        }
+       // .onAppear(perform: addAnimation)
+      }
+//        private func addAnimation() {
+//            guard !animate else { return }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+//                withAnimation(
+//                    Animation
+//                        .easeInOut(duration: 2.0)
+//                        .repeatForever()
+//                ) {
+//                    self.animate.toggle()
+//                }
+//            })
+//    }
 }
 
 struct HomeView_Previews: PreviewProvider {
@@ -188,55 +263,62 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
-// MARK: Add Plus Button View
-struct AddTaskView1: View {
-  @State var showCreateTaskView = false
-    @State private var animate: Bool = false
-    private let secondaryAccentColor = Color(.blue)
-
-  var body: some View {
-    VStack {
-      Spacer()
-      HStack {
-        Spacer()
-        Button(
-          action: {
-          //  showCreateTaskView = true
-          }, label: {
-           Image(systemName: "plus")
-                  .resizable()
-              .multilineTextAlignment(.center)
-              .frame(width: 20, height: 20)
-              .foregroundColor(Color.white)
-              .padding()
-          })
-        .background(animate ? Color.purple : Color.blue)
-          .cornerRadius(20)
-          .padding()
-          .padding(.horizontal, animate ? 30 : 30)
-          .scaleEffect(animate ? 1.1 : 1.0)
-          .offset(y: animate ? -1 : .zero)
-//          .sheet(isPresented: $showCreateTaskView) {
-//            CreateTaskView()
+//// MARK: Add Plus Button View
+//struct AddTaskView1: View {
+//  @State var showCreateTaskView = false
+//    @State private var animate: Bool = false
+//    private let secondaryAccentColor = Color(.blue)
+//    @State private var tasks: [Task] = sampleTasks
+//
+//  var body: some View {
+//    VStack {
+//      Spacer()
+//      HStack {
+//        Spacer()
+//        Button(
+//          action: {
+//            showCreateTaskView = true
+//          }, label: {
+//           Image(systemName: "plus")
+//                  .resizable()
+//              .multilineTextAlignment(.center)
+//              .frame(width: 20, height: 20)
+//              .foregroundColor(Color.white)
+//              .padding()
+//          })
+//        .background(animate ? Color.purple : Color.blue)
+//          .cornerRadius(20)
+//          .padding()
+//          .padding(.horizontal, animate ? 30 : 30)
+//          .scaleEffect(animate ? 1.1 : 1.0)
+//          .offset(y: animate ? -1 : .zero)
+////          .sheet(isPresented: $showCreateTaskView) {
+////            CreateTaskView()
+////          }
+//          .fullScreenCover(isPresented: $showCreateTaskView){
+//              AddTaskView{task in
+//                  //simply add task
+//                  tasks.append(task)
+//              }
 //          }
-      }
-      .padding(.bottom)
-    }
-    .onAppear(perform: addAnimation)
-  }
-    private func addAnimation() {
-        guard !animate else { return }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-            withAnimation(
-                Animation
-                    .easeInOut(duration: 2.0)
-                    .repeatForever()
-            ) {
-                self.animate.toggle()
-            }
-        })
-    }
-}
+//      }
+//      .padding(.bottom)
+//    }
+//    .onAppear(perform: addAnimation)
+//  }
+//    private func addAnimation() {
+//        guard !animate else { return }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+//            withAnimation(
+//                Animation
+//                    .easeInOut(duration: 2.0)
+//                    .repeatForever()
+//            ) {
+//                self.animate.toggle()
+//            }
+//        })
+//    }
+//}
 
 // MARK: View Extensions
 extension View{

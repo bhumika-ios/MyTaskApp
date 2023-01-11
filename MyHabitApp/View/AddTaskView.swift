@@ -154,7 +154,10 @@ struct AddTaskView: View {
                 }
                 .padding(.top,5)
                 Button{
-                    
+                    // creating task and pass it to the callback
+                    let task = Task(dateAdded: taskDate, taskName: taskName, taskDescription: taskDescription, taskCategory: taskCategory)
+                    onAdd(task)
+                    dismiss()
                 }label: {
                     Text("Create Task")
                         .laila(16, .regular)
@@ -163,11 +166,11 @@ struct AddTaskView: View {
                         .hAlign(.center)
                         .background{
                             Capsule()
-                                .fill(taskCategory.color.gradient)
+                                .fill(animateColor.gradient)
                         }
                 }
                 .vAlign(.bottom)
-                .disabled(taskName == "")
+                .disabled(taskName == "" || animate)
                 .opacity(taskName == "" ? 0.6 : 1)
             }
             .padding(15)
