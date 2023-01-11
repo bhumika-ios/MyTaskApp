@@ -16,6 +16,9 @@ struct AddTaskView: View {
     @State private var taskDescription: String = ""
     @State private var taskDate: Date = .init()
     @State private var taskCategory: Category = .general
+    // category animation property
+    @State private var animateColor: Color = Category.general.color
+    @State private var animate: Bool = false
     var body: some View {
         VStack(alignment: .leading){
             VStack(alignment: .leading, spacing: 10){
@@ -121,9 +124,18 @@ struct AddTaskView: View {
                             }
                             .foregroundColor(category.color)
                             .contentShape(Rectangle())
-//                            .onTapGesture {
-//                                <#code#>
-//                            }
+                            .onTapGesture {
+                                //avoids simultaneous taps
+                                guard !animate else{return}
+                                animateColor = category.color
+                                withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 1, blendDuration: 1)){
+                                    animate = true
+                                }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                                    animate = false
+                                    taskCategory = category
+                                }
+                            }
                     }
                 }
                 .padding(.top,5)
