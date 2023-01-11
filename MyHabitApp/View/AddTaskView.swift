@@ -97,7 +97,21 @@ struct AddTaskView: View {
             .hAlign(.leading)
             .padding(15)
             .background{
-                taskCategory.color
+                ZStack{
+                    taskCategory.color
+                    // so the animation is simple: when the new category is tapped the new color will be popped out the bottom trailing as a scaling effect and after the animation is finished it will be reset to its default state so that the next color will again be popped out in the same way
+                    GeometryReader{
+                        let size = $0.size
+                        Rectangle()
+                            .fill(animateColor)
+                            .mask{
+                                Circle()
+                            }
+                            .frame(width: animate ? size.width * 2 : 0, height: animate ? size.height * 2 : 0)
+                            .offset(animate ? CGSize(width: -size.width / 2, height: -size.height / 2) : size)
+                    }
+                    .clipped()
+                }
                     .ignoresSafeArea()
             }
             VStack(alignment: .leading, spacing: 10){
