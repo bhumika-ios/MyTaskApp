@@ -31,11 +31,20 @@ struct HomeView: View {
     /// -  timeline view
     @ViewBuilder
     func TimelineView()->some View{
-        VStack{
+        ScrollViewReader{ proxy in
+            
             let hours = Calendar.current.hours
-            ForEach(hours, id: \.self){hour in
-                TimelineViewRow(hour)
+            let midHour = hours[hours.count / 2]
+                VStack{
+                    ForEach(hours, id: \.self){hour in
+                        TimelineViewRow(hour)
+                }
+           
             }
+            /// - because the timeline view beginds at 12 a.m, we want it to begin at 12. pm which is midday, so we use scrollviewreader proxy to set it to mid day
+                .onAppear(){
+                    proxy.scrollTo(midHour)
+                }
         }
     }
     /// - timelineview row
@@ -62,6 +71,8 @@ struct HomeView: View {
                     .stroke(.gray.opacity(0.5), style: StrokeStyle(lineWidth: 0.5, lineCap: .butt, lineJoin: .bevel, dash: [5], dashPhase: 5))
                     .frame(height: 0.5)
                     .offset(y: 10)
+            }else{
+                
             }
             
         }
