@@ -40,15 +40,30 @@ struct HomeView: View {
     }
     /// - timelineview row
     @ViewBuilder
-    func TimelineViewRow(_ hour: Date)->some View{
+    func TimelineViewRow(_ date: Date)->some View{
         HStack(alignment: .top){
-            Text(hour.toString("h a"))
+            Text(date.toString("h a"))
                 .laila(14, .regular)
                 .frame(width: 45, alignment: .leading)
-            Rectangle()
-                .stroke(.gray.opacity(0.5), style: StrokeStyle(lineWidth: 0.5, lineCap: .butt, lineJoin: .bevel, dash: [5], dashPhase: 5))
-                .frame(height: 0.5)
-                .offset(y: 10)
+            /// - filtering tasks
+            let calendar = Calendar.current
+            let filteredTasks = tasks.filter{
+                if let hour = calendar.dateComponents([.hour], from: date).hour,
+                   let taskHour = calendar.dateComponents([.hour], from: $0.dateAdded).hour,
+                   /// - current day
+                   hour == taskHour && calendar.isDate($0.dateAdded, inSameDayAs: date){
+                  /// - filtering tasks based on hour and also verifying whether the date is the same as the selected week day
+                    return true
+                }
+                return false
+            }
+            if filteredTasks.isEmpty{
+                Rectangle()
+                    .stroke(.gray.opacity(0.5), style: StrokeStyle(lineWidth: 0.5, lineCap: .butt, lineJoin: .bevel, dash: [5], dashPhase: 5))
+                    .frame(height: 0.5)
+                    .offset(y: 10)
+            }
+            
         }
         .hAlign(.leading)
         .padding(.vertical,15)
